@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mokimoki.views import index_view
+from mokimoki import views
+from django.conf import settings
+from django.conf.urls.static import static
 
+handler404 = views.custom_handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_view)
-]
+    path('', views.index_view)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
