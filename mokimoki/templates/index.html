@@ -116,32 +116,31 @@
             <div class="col-md-2"></div>
               </div>
                <div class="row">
-               <form>
+               <form method="post">
                 <div class="col-md-2"></div>
                    <div class="col-md-6">
   <div class="form-group">
-    <input type="text" class="form form-control" id="formGroupExampleInput" placeholder="Enter your name">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form form-control" id="formGroupExampleInput2" placeholder="Enter your mobile number">
-  </div>
+                                {% csrf_token %}
+                              <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+                              <input name="phone" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your mobile number">
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class=" let bg-image-btn form-group "
+                            style="
+                            background-image: url({% static 'mokimoki/btn.png' %});
+                             ">
+
+                            <div class="input-group-btn">
+                         <button class="btn1 btn-lg" type="submit"> <p>get it now</p> </button>
+                        </div>
+                        </div>
                    </div>
                    <div class="col-md-4"></div>
+
 </form>
                </div>
            </div>
-               <div
-  class=" let bg-image-btn form-group col-md-7"
-  style="
-    background-image: url({% static 'mokimoki/btn.png' %});
-  "
->
-                        <div class="input-group-btn">
-                         <button class="btn1 btn-lg" type="submit"  data-dismiss="modal">
-                             <p>get it now</p>
-                        </button>
-                       </div>
-                     </div>
+
           </div>
       </div>
     </div>
@@ -417,38 +416,35 @@
     height: 122vh;">
            <div class="d-flex justify-content-center align-items-center h-100">
                <div class="col-md-1"></div>
-        <div class="a-text col-md-7">
-        <h1>GET A <span class="color-text">FREE STRATEGY TO DOMINATE</span> YOUR <span class="color-text">DOUBLE</span> MARKET </h1>
-            <div class="col-md-4"></div>
-              </div>
-               <div class="row">
-               <form>
-                <div class="col-md-2"></div>
-                   <div class="col-md-6">
-  <div class="form-group">
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your mobile number">
-  </div>
-                   </div>
-                   <div class="col-md-4"></div>
-</form>
-               </div>
+                    <div class="a-text col-md-7">
+                        <h1>GET A <span class="color-text">FREE STRATEGY TO DOMINATE</span> YOUR <span class="color-text">DOUBLE</span> MARKET </h1>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                    <form method="post">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {% csrf_token %}
+                              <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name">
+                              <input name="phone" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your mobile number">
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class=" let bg-image-btn form-group "
+                            style="
+                            background-image: url({% static 'mokimoki/btn.png' %});
+                             ">
+
+                            <div class="input-group-btn">
+                         <button class="btn1 btn-lg" type="submit"> <p>get it now</p> </button>
+                        </div>
+                        </div>
+                        </div>
+
+                    </form>
+                    </div>
+
            </div>
-               <div
-  class=" let bg-image-btn form-group col-md-7"
-  style="
-    background-image: url({% static 'mokimoki/btn.png' %});
-  "
->
-                        <div class="input-group-btn">
-                         <button class="btn1 btn-lg" type="submit"> 
-                            <a href="#"> <p>get it now</p> </a>
-                        </button>
-                       </div>
-                     </div>
-          </div> 
            <div
   class="bg-image-footer"
   style="
@@ -469,5 +465,6 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'mokimoki/accets/js/bootstrap.min.js' %}"></script>
+       </div>
   </body>
 </html>

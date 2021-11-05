@@ -7,35 +7,38 @@ import config
 
 def email(mail_text):
 # create message object instance
-    msg = MIMEMultipart()
+    for adress in config.mail_to:
+        msg = MIMEMultipart()
 
 
-    message = mail_text
+        message = mail_text
 
     # setup the parameters of the message
-    password = config.mail_password
-    msg['From'] = config.mail_from
-    msg['To'] = config.mail_to
-    msg['Subject'] = "Тест на функцию"
+        password = config.mail_password
+        msg['From'] = config.mail_from
+
+        print(adress)
+        msg['To'] = adress
+        msg['Subject'] = "Новый заказ"
 
     # add in the message body
-    msg.attach(MIMEText(message, 'plain'))
+        msg.attach(MIMEText(message, 'plain'))
 
     #create server
-    server = smtplib.SMTP('smtp.gmail.com: 587')
+        server = smtplib.SMTP('smtp.gmail.com: 587')
 
-    server.starttls()
+        server.starttls()
 
     # Login Credentials for sending the mail
-    server.login(msg['From'], password)
+        server.login(msg['From'], password)
 
 
     # send the message via the server.
-    server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        print("successfully sent email to %s:" % (msg['To']))
+        server.quit()
 
-    server.quit()
 
-    print("successfully sent email to %s:" % (msg['To']))
 
 def send_telegram(text: str):
     token = config.token
